@@ -53,52 +53,52 @@ const cardArray = [
 
 const pokemonArray = [
     {
-        name: 'bulbasaur',
-        img: 'images/bulbasuar.png'
+    name: 'bulbasaur',
+    img: 'images/bulbasuar.png'
     },
     {
-        name: 'charmander',
-        img: 'images/charmander.png'
+    name: 'charmander',
+    img: 'images/charmander.png'
     },
     {
-        name: 'squirtle',
-        img: 'images/squirtle.png'
+    name: 'squirtle',
+    img: 'images/squirtle.png'
     },
     {
-        name: 'chikorita',
-        img: 'images/chikorita.png'
+    name: 'chikorita',
+    img: 'images/chikorita.png'
     },
     {
-        name: 'cyndaquil',
-        img: 'images/cyndaquil.png'
+    name: 'cyndaquil',
+    img: 'images/cyndaquil.png'
     },
     {
-        name: 'totodile',
-        img: 'images/totodile.png'
+    name: 'totodile',
+    img: 'images/totodile.png'
     },
     {
-        name: 'bulbasaur',
-        img: 'images/bulbasuar.png'
+    name: 'bulbasaur',
+    img: 'images/bulbasuar.png'
     },
     {
-        name: 'charmander',
-        img: 'images/charmander.png'
+    name: 'charmander',
+    img: 'images/charmander.png'
     },
     {
-        name: 'squirtle',
-        img: 'images/squirtle.png'
+    name: 'squirtle',
+    img: 'images/squirtle.png'
     },
     {
-        name: 'chikorita',
-        img: 'images/chikorita.png'
+    name: 'chikorita',
+    img: 'images/chikorita.png'
     },
     {
-        name: 'cyndaquil',
-        img: 'images/cyndaquil.png'
+    name: 'cyndaquil',
+    img: 'images/cyndaquil.png'
     },
     {
-        name: 'totodile',
-        img: 'images/totodile.png'
+    name: 'totodile',
+    img: 'images/totodile.png'
     }
 ]
 
@@ -114,7 +114,7 @@ let cardsWon = []
 function createBoard() {
     for (let i = 0; i < pokemonArray.length; i++) {
     const card = document.createElement('img')
-    card.setAttribute('src', 'images/blank.png')
+    card.setAttribute('src', 'images/pokemon_card_backside.png')
     card.setAttribute('data-id', i)
     card.addEventListener('click', flipCard)
     grid.appendChild(card)
@@ -123,32 +123,32 @@ function createBoard() {
 
   //check for matches
 function checkForMatch() {
-    const cards = document.querySelectorAll('img')
+    const cards = document.querySelectorAll('#grid img')
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
     
     if(optionOneId == optionTwoId) {
-    cards[optionOneId].setAttribute('src', 'images/blank.png')
-    cards[optionTwoId].setAttribute('src', 'images/blank.png')
+    cards[optionOneId].setAttribute('src', 'images/pokemon_card_backside.png')
+    cards[optionTwoId].setAttribute('src', 'images/pokemon_card_backside.png')
     alert('You have clicked the same image!')
     }
     else if (cardsChosen[0] === cardsChosen[1]) {
     alert('You found a match')
-    cards[optionOneId].setAttribute('src', 'images/white.png')
-    cards[optionTwoId].setAttribute('src', 'images/white.png')
+    cards[optionOneId].setAttribute('src', 'images/pokeball.png')
+    cards[optionTwoId].setAttribute('src', 'images/pokeball.png')
     cards[optionOneId].removeEventListener('click', flipCard)
     cards[optionTwoId].removeEventListener('click', flipCard)
     cardsWon.push(cardsChosen)
     } else {
-    cards[optionOneId].setAttribute('src', 'images/blank.png')
-    cards[optionTwoId].setAttribute('src', 'images/blank.png')
+    cards[optionOneId].setAttribute('src', 'images/pokemon_card_backside.png')
+    cards[optionTwoId].setAttribute('src', 'images/pokemon_card_backside.png')
     alert('Sorry, try again')
     }
     cardsChosen = []
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length
     if  (cardsWon.length === pokemonArray.length/2) {
-    resultDisplay.textContent = 'Congratulations! You found them all!'
+    resultDisplay.textContent = 'Congratulations! You caught em all!'
     }
 }
 

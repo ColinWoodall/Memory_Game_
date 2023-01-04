@@ -1,6 +1,54 @@
+:root{
+    --main-white: #f1faee;
+    --main-blue: #1d3557;
+    --main-yellow: #e9c46a;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Oswald', sans-serif;
+    background-color: var(--main-white);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url(images/PetalburgWoods.png);
+    background-size: cover;
+}
+
+header{
+    background-color: var(--main-blue);
+}
+
+h3{
+    background-color: var(--main-yellow);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.logo-img{
+    width: 250px;
+    height: 125px; 
+    border-radius: 4px;
+}
+
 .grid{
-    width: 400px;
-    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
     display: flex;
     flex-wrap: wrap;
+    gap: 5px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+img{
+    width: 75px;
+    height: 75px;
+    border-radius: 4px;
 }
